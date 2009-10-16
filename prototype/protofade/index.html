@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>ProtoFade</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+    html,body{background: #1a171b;color: #fff;}
+    #bd{margin-top: 30px;}
+    a{text-decoration:none; color:#fff;}
+    :focus{outline: none}
+    pre { margin:5px 0; padding:5px 0; border-top: 1px dotted #F9FFDC; border-bottom:1px dotted #F9FFDC;}
+    pre code { font: 12px "Monospaced", monospace; display: block; margin-bottom: 10px; padding:0; line-height:100%;color: #F9FFDC }
+    span{font-size: 20px;}
+    #ft {margin-top: 12px;color: #ccc;font-family: arial;font-size: 11px}
+    #ft a{color: #ccc;}
+    #ft a:hover{text-decoration: underline}
+    .download{color: #FFD748;font-family: verdana}
+
+    #slider-container, #slider-container2,#slider-container3{ width:730px; margin:0 auto 30px auto;}
+    #protofade,#protofade2{ position:relative; display:block; margin:0; padding:0px; width:730px;  height:200px; overflow:hidden; clear:both; border: 1px solid #CCCCCC;}
+    #protofade li,#protofade2 li { position:absolute; top:0; left:0; display:block; margin:0; padding:0; background:none;}
+    #protofade3{ position:relative; display:block; margin:0;width:730px;height:125px; overflow:hidden; clear:both; border: 1px solid #CCCCCC;}
+    #protofade3 div{ position:absolute; top:0; left:0; display:block; margin:0; padding:0; background:none;padding: 5px}
+    .next,.previous,.play,.stop { cursor:pointer; display: block; margin:5px 15px 15px 15px; float: left; }
+    .newprofade{font-family: arial;font-size: 30px;margin-top: 10px;color: #F9FFDC;margin-bottom: 10px;margin-left: 10px}
+
+   </style>
+   <script type="text/javascript" src="js/prototype-1.6.0.3.js"></script>
+   <script type="text/javascript" src="js/scriptaculous.js?load=effects"></script>
+   <script type="text/javascript" src="js/protofade-min.js"></script> 
+   <script type="text/javascript">
+
+         
+    function StartUp() {
+	
+           new Protofade('protofade',{random: true});
+
+           new Protofade('protofade2',{controls: true,slideshow: false});
+
+           new Protofade('protofade3',{});
+	
+    }
+
+    document.observe('dom:loaded', StartUp);       
+
+   </script>
+</head>
+<body>
+
+<div id="doc" class="yui-t7">
+
+   <div id="hd" role="banner"><center><img src="images/protofade.jpg"></center></div>
+
+       <span class="newprofade">new Protofade(element,options);</span>
+
+   <div id="bd" role="main">
+
+     <span class="download">#1 random, without controls</span>
+     <div class="yui-g">
+
+        <div id="slider-container">
+    
+            <ul id="protofade">
+        	<li><img src="images/1.jpg" alt="photo 1" /></li>
+                <li><img src="images/2.jpg" alt="photo 2"/></li>
+                <li><img src="images/3.jpg" alt="photo 3" /></li>
+                <li><img src="images/4.jpg" alt="photo 4" /></li>
+                <li><img src="images/5.jpg" alt="photo 5" /></li>
+           </ul>
+	</div><!-- end slider-container-->
+
+
+     <span class="download">#2 various content</span>
+     <div id="slider-container3">
+           <div id="protofade3">
+       	     <div>
+       	        <h3>Tutorial: scraping and turning a web site into a widget with YQL</h3>
+                   
+                    <p>During the mentoring sessions at last weekend’s Young Rewired State one of the most asked questions was how you can easily re-use content on the web. The answer I gave was by using YQL and I promised a short introduction to the topic so here it is. What we are going to do here and now is to turn a web sites into a widget with YQL and a few lines of JavaScript:</p>
+             </div>
+       	     <div>
+       	        <h3>Benefits of using YQL</h3>
+                    <p>YQL gives you a lot of flexibility when it comes to remixing the web and filtering the results. You can: mix and match APIs, filter results, simplify authentication, use in console or from code, minimal research of documentation, caching of results, proxied on Yahoos servers</p>
+             </div>
+       	     <div>
+       	        <h3>Rickrolling Google translate with YQL – Rickrollwhisper</h3>
+                    <p>This morning I found this wonderful blog post that shows what happens when you run the “never gonna give you up” aka. RickRoll lyrics through an automated translation tool and back into English. This has been a classic time waster using Babelfish in the past for me and I thought we could knock it up a notch and used YQL and the Google Translation API to automate this process.</p>
+             </div>
+       	     <div>
+       	        <h3>RSS2map – a Placemaker/Yahoo Maps mashup generator script</h3>
+                    <p>This morning I went to the Telegraph Media Group to talk about GeoMaker and Placemaker. The main thing they wanted to know was how to place an RSS feed that does not have any Geo data on a map and how to style it. To make this easier I created rss2map, a demo PHP script with all the CSS and JavaScript needed to show a feed on a map</p>
+             </div>
+           </div><!-- end protofade3-->
+     </div><!-- end slider-container3-->
+
+
+     <span class="download">#3 with controls</span>
+        <div id="slider-container2">
+            <ul id="protofade2">
+        	<li><img src="images/1.jpg" alt="photo 1" /></li>
+                <li><img src="images/2.jpg" alt="photo 2"/></li>
+                <li><img src="images/3.jpg" alt="photo 3" /></li>
+                <li><img src="images/4.jpg" alt="photo 4" /></li>
+                <li><img src="images/5.jpg" alt="photo 5" /></li>
+           </ul>
+	</div><!-- end slider-container2-->
+
+
+   </div><!-- end yui-g-->
+
+ </div><!-- end bd -->
+ <div class="download">Options</div>
+<pre><code>
+ duration - the duration of appear fade effect (default value : 1.0)
+
+ delay -  the time in seconds for which each slide is displayed (default value: 4.0)
+
+ controls - includes buttons (next, previous, play and stop) to control the slideshow (default value: false)
+
+ random - puts slides in random (default value: false)
+
+ slideshow - automatic start of the slideshow (default value: true)
+</code></pre>  
+
+    <div class="download">Download <a href="js/protofade-min.js">protofade-min.js</a></div>
+
+<div id="ft" role="contentinfo"><p>Written by <a href="http://thinkphp.ro">Adrian Statescu</a> - Using Prototype and Script.aculo.us</p></div>
+
+</div><!-- end doc -->
+
+</body>
+</html>

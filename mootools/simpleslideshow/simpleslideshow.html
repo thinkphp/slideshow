@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>SimpleSlideShow</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+   html,body{background:#69c;margin:0;padding:0;}
+
+   #doc{background:#fff;border: 1em solid #fff;}
+
+   h1{font-family:Calibri,Arial,Sans-serif;font-size:200%;margin:0 0 .5em 0; padding:0;}
+
+   #ft{font-size: 12px;color: #ccc;margin-top: 10px}
+   #ft a{color: #ccc}
+
+   .slideshow{position: relative}
+
+   .slideshow img{position: absolute;top: 0;left: 0}
+
+   </style>
+
+   <script type="text/javascript" src="mootools1.2.3.js"></script>
+   <script type="text/javascript" src="simpleslideshow.js"></script>
+   <script type="text/javascript">
+
+      window.addEvent('domready',function(){
+
+             $$(".slideshow").each(function(slideshow){
+
+                 new SimpleSlideShow(slideshow);
+             });                           
+      }); 
+
+  </script>
+
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner"><h1>SimpleSlideShow</h1><h2>Usage: new SimpleSlideShow(slideshow, arrayImagesSource, [, options])</h2><h2>
+<pre>
+     $$(".slideshow").each(function(slideshow){
+            new SimpleSlideShow(slideshow);
+     });                           
+</pre>
+
+</h2></div>
+
+   <div id="bd" role="main">
+
+	<div class="yui-g">
+
+             <div class="slideshow" style="width: 700px;height:180px" images="['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg']"></div>	
+
+	</div>
+
+	</div>
+   <div id="ft" role="contentinfo"><p>Written By <a href="http://thinkphp.ro">Adrian Statescu</a></p></div>
+</div>
+</body>
+</html>
